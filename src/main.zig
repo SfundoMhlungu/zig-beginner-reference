@@ -112,9 +112,18 @@ pub fn main() anyerror!void {
 
    }
 
+
+   p("{any}", .{deepThought()});
     
 }
 
 test "basic test" {
     try std.testing.expectEqual(10, 3 + 7);
+}
+
+
+
+
+fn deepThought() void {
+     p("{any}", .{[_]u8{2}});
 }
