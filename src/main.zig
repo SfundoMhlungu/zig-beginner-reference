@@ -30,6 +30,7 @@ pub fn main() anyerror!void {
 
      };
 
+    
 
      var arr: [3]u32 = undefined; // I am going to define it soon
      arr = [3]u32{1, 2, 3};
@@ -61,6 +62,11 @@ pub fn main() anyerror!void {
 
         p("{u}", .{m});
     }
+
+    //  can loop over index too 
+    for(myLove) |love, index|{
+        p("i = {}, M ={u}",.{index, love});
+    }
     std.log.info("{any}", .{c});
 
     std.log.info("All your codebase are belong to us. {}, {}, {any}, {any}, {}", .{myThug, myEnum, arr, infer[0], arrLen});
@@ -84,10 +90,29 @@ pub fn main() anyerror!void {
 
        var f:u32 = 1; 
      while(f < 1024) : (f *= 2){
-
+         // continue here will not run the code below but tell the loop to continue
          p("f =  {}", .{f});
      }
  
+
+
+
+   p("fizzzzbuzz", .{});
+
+
+
+   var t:u8 = 0; 
+
+
+   while(t < 100): (t += 1){
+
+      if(t % 2 == 0) p("fizz {}", .{t});
+      if(t % 5 == 0) p("buzz {}", .{t});
+      if((t % 2 == 0) and (t % 5 == 0)) p("fizzzzbuzz {}", .{t});
+
+   }
+
+    
 }
 
 test "basic test" {
